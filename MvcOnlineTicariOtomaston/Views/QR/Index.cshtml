@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>QRCode</h2>
+<br/>
+<p>
+    <h3>
+        Aşağıdaki alana müşterinin kargo takip numarasını girerek QRCode oluşturabilirsiniz.
+    </h3>
+</p>
+<br />
+<div>
+    @using (Html.BeginForm("Index", "QR", FormMethod.Post))
+    {
+        <br/>
+        <input type="text" name="kod"  />
+        <input type="submit" value="QR Oluştur" />
+
+    }
+    <br/>
+    @if (ViewBag.karekodimage != null)
+    {
+        <img src="@ViewBag.karekodimage" alt="" style="width:400px; height:400px;" />
+    }
+</div>
+
